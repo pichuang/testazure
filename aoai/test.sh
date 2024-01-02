@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pytest -v test-aoai.py
+pytest -v test-public-aoai.py
