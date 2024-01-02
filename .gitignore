@@ -1,2 +1,7 @@
 aoai/.env-aoai
+aoai/__pycache__/*
+aoai/.pytest_cache/*
 testazure-env/*
+aoai/__pycache__/test-aoai.cpython-39-pytest-7.4.3.pyc
+*.pyc
+aoai/__pycache__/test-aoai.cpython-39-pytest-7.4.3.pyc
