@@ -39,13 +39,13 @@ class TestAzureOpenAIEndpoints(unittest.TestCase):
 
     def test_to_aoai_endpoint_ip(self):
         aoai_endpoint = self.host.addr(self.aoai_netloc)
-        self.assertFalse(aoai_endpoint.is_reachable) # Equal to "ping -W 1 -c 1 168.63.129.16"
+        self.assertTrue(aoai_endpoint.is_reachable) # Equal to "ping -W 1 -c 1 168.63.129.16"
         self.assertTrue(aoai_endpoint.port(80).is_reachable) # Equal to "nc -w 1 -z 168.63.129.16 80"
         self.assertTrue(aoai_endpoint.port(443).is_reachable) # Equal to "nc -w 1 -z 168.63.129.16 443"
 
     def test_to_aoai_endpoint_https(self):
         response = requests.get(AZURE_OPENAI_ENDPOINT_URL, verify=True)
-        self.assertEqual(response.status_code, 404) # By default, Azure OpenAI Endpoint is return 404 if there is no request
+        self.assertEqual(response.status_code, 404) # By de-fault, Azure OpenAI Endpoint is return 404 if there is no request
 
     def test_prompt(self):
         azure_client = AzureOpenAI(
